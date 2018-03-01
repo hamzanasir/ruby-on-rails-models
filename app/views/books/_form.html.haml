@@ -11,3 +11,11 @@
     = f.text_field :title
   .actions
     = f.submit 'Save'
+
+  = f.fields_for :authors, @book.authors do |author|
+    .field
+      = author.label :first_name
+      = author.text_field :first_name
+    .field
+      = author.label :last_name
+      = author.text_field :last_name
